@@ -7,19 +7,19 @@ const Node = require('./node');
         }
 
         append(data) {
-        let node = {
-        data: data
-        };
-         if (this.length == 0) {
-        this.head = node;
-        this.tail = node;
-        } else {
-        this.tail.next = node;
-        node.prev = this.tail;
-         this.tail = node;
-        }
-
-        this.length++;
+   if (this.head === null) {
+     node.prev = data;
+    node.next = data;
+    this.head = data;
+    this.tail = data;
+  } else {
+    node.prev = this.tail;
+    node.next = this.head;
+    this.head.prev = data;
+    this.tail.next = data;
+    this.tail = data;
+  }
+  this.length++;
         }
 
         head() {}
