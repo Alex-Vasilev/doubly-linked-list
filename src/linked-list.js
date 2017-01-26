@@ -7,14 +7,15 @@ const Node = require('./node');
         }
 
         append(data) {
-//        if (this.length == 0) {
-//        this.head = Node;
-//        this.tail = Node;
-//        } else {
-//        this.tail.next = Node;
-//        Node.prev = this.tail;
-//        this.tail = Node;
-//        }
+        let node = new Node(data);
+        if (this.length == 0) {
+        this.head = node;
+        this.tail = node;
+        } else {
+        this.tail.next = node;
+        node.prev = this.tail;
+        this.tail = node;
+        }
             
 //        if (this.length == 0) {
 //        this.head = Node;
@@ -37,7 +38,7 @@ const Node = require('./node');
 //    this.tail.next = Node;
 //    this.tail = Node;
 //  }
-//  this.length++;
+  this.length++;
         }
 
         head() {}
