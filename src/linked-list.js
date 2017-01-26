@@ -8,16 +8,16 @@ const Node = require('./node');
 
         append(data) {
    if (this.head === null) {
-     node.prev = module.exports;
-    node.next = module.exports;
-    this.head = module.exports;
-    this.tail = module.exports;
+     node.prev = Node;
+    node.next = Node;
+    this.head = Node;
+    this.tail = Node;
   } else {
     node.prev = this.tail;
     node.next = this.head;
-    this.head.prev = module.exports;
-    this.tail.next = module.exports;
-    this.tail = data;
+    this.head.prev = Node;
+    this.tail.next = Node;
+    this.tail = Node;
   }
   this.length++;
         }
