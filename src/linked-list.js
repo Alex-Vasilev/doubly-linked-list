@@ -8,13 +8,13 @@ const Node = require('./node');
 
         append(data) {
    if (this.head === null) {
-     node.prev = Node;
-    node.next = Node;
+     Node.prev = Node;
+    Node.next = Node;
     this.head = Node;
     this.tail = Node;
   } else {
-    node.prev = this.tail;
-    node.next = this.head;
+    Node.prev = this.tail;
+    Node.next = this.head;
     this.head.prev = Node;
     this.tail.next = Node;
     this.tail = Node;
