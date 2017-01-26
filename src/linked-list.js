@@ -9,15 +9,15 @@ const Node = require('./node');
         append(data) {
         const node = new Node(data);
        
-//        if (this.length == 0) {
-//        this._head = Node;
-//        this._tail = Node;
-//        
-//        } else {
-//        this._tail.next = Node;
-//        node.prev = this._tail;
-//        this._tail = Node;
-//        }
+        if (this.length === null) {
+        this._head = node;
+        this._tail = node;
+        
+        } else {
+        this.tail.next = node;
+        node.prev = this._tail;
+        this._tail = node;
+        }
             
 //        if (this.length == 0) {
 //        this.head = Node;
@@ -28,22 +28,20 @@ const Node = require('./node');
 //        this.head = Node;
 //        }
 //        this.length++;
-   if (this._head === null) {
-//        console.log(this._tail instanceof Node)
-//     node.prev = node;
-//    node.next = node;
-    this._head = node;
-    this._tail = node;
-  } else {
-    node.prev = this._tail;
-    node.next = this._head;
-    this.head.prev = node;
-    this.tail.next = node;
-    this._tail = node;
-  }
-//this.data = data;
+//   if (this._head === null) {
+////     node.prev = node;
+////    node.next = node;
+//    this._head = node;
+//    this._tail = node;
+//  } else {
+//    node.prev = this._tail;
+//    node.next = this._head;
+//    this.head.prev = node;
+//    this.tail.next = node;
+//    this._tail = node;
+//  }
   this.length++;
-//  return 1;
+
  
         }
 
