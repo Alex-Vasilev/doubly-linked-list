@@ -7,7 +7,7 @@ const Node = require('./node');
         }
 
         append(data) {
-        let node = new Node(data);
+        const node = new Node(data);
         if (this.length == 0) {
         this.head = node;
         this.tail = node;
