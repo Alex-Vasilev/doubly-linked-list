@@ -2,8 +2,8 @@ const Node = require('./node');
         class LinkedList {
         constructor() {
         this.length = 0;
-        this.head;
-        this.tail;
+        this._head;
+        this._tail;
         }
 
         append(data) {
@@ -11,6 +11,7 @@ const Node = require('./node');
         if (this.length == 0) {
         this._head = Node;
         this._tail = Node;
+        
         } else {
         this._tail.next = Node;
         node.prev = this._tail;
@@ -38,8 +39,9 @@ const Node = require('./node');
 //    this.tail.next = Node;
 //    this.tail = Node;
 //  }
+this.data = data;
   this.length++;
-  return Node;
+//  return Node;
         }
 
         head() {}
@@ -62,3 +64,8 @@ const Node = require('./node');
         }
 
 module.exports = LinkedList;
+            const data = 42;
+
+            const list = new LinkedList();
+
+            list.append(data);
