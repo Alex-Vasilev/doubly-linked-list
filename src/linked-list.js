@@ -17,7 +17,7 @@ const Node = require('./node');
         }
 
         tail() {
-//        return this._tail.prev.data;
+        return this._tail.prev.data;
         }
 
         _at(index) {
@@ -61,14 +61,14 @@ const Node = require('./node');
         }
 
         deleteAt(index) {
-//        var pos = this._at(index);
-//        pos.next.prev = pos.prev;
-//        pos.prev.next = pos.next;
-//        this.length--;
-//        pos.prev = null;
-//        pos.next = null;
-//        pos.data = null;
-//        return this;
+        var pos = this._at(index);
+        pos.next.prev = pos.prev;
+        pos.prev.next = pos.next;
+        this.length--;
+        pos.prev = null;
+        pos.next = null;
+        pos.data = null;
+        return this;
         }
 
         reverse() {
