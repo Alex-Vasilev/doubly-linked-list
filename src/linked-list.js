@@ -49,30 +49,33 @@ const Node = require('./node');
         this.length++;
         }
 
-//        head() {
-//        return this.length == 0 ? null : this._head.data;
-//        }
-//
-//        tail() {
-////        return 
-//        console.log(this.length == 0 ? null : this._tail.data);
-//        }
+        head() {
+        return this.length == 0 ? null : this._head.data;
+        }
+
+        tail() {
+        return this.length == 0 ? null : this._tail.data;
+        }
 
         at(index) {
-
+//            this.length = index+1;
+            
+//            this.tail();
+//        console.log(this.length)
+//            return 
         }
 
         insertAt(index, data) {}
 
-//        isEmpty() {
-//        return this.length === 0 ? true : false;
-//        }
-//
-//        clear() {
-//        this.length = 0;
-//        this._head = null;
-//        this._tail = null;
-//        }
+        isEmpty() {
+        return this.length == 0 ? true : false;
+        }
+
+        clear() {
+        this.length = 0;
+        this._head = null;
+        this._tail = null;
+        }
 
         deleteAt(index) {}
 
