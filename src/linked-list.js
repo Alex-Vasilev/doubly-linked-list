@@ -50,99 +50,99 @@ const Node = require('./node');
         this.length++;
         }
 
-        head() {
-        return this.length == 0 ? null : this._head.data;
-        }
-
-        tail() {
-//        return 
-         return this.length == 0 ? null : this._tail.data;
-        }
-
-        at(index) {
-        var currentNode = this._head,
-                length = this.length,
-                count = 0,
-                message = {failure: 'Failure: non-existent node in this list.'};
-                
-        if (length === 0 || index < 0 || index > length) {
-        throw new Error(message.failure);
-        }
-
-        
-        while (count < index) {
-        currentNode = currentNode.next;
-        count++;
-        }
-
-    return currentNode
-//        console.log(currentNode);
-        }
-
-        insertAt(index, data) {}
-
-        isEmpty() {
-        return this.length == 0 ? true : false;
-        }
-
-        clear() {
-        this.length = 0;
-        this._head = null;
-        this._tail = null;
-        }
-
-        deleteAt(index) {
-        var currentNode = this._head,
-        length = this.length,
-        count = 0,
-        message = {failure: 'Failure: non-existent node in this list.'},
-        beforeNodeToDelete = null,
-        nodeToDelete = null,
-        deletedNode = null,
-        afterNodeToDelete = null;
-
-    
-    if (length === 0 || index < 0 || index > length) {
-        throw new Error(message.failure);
-    }
-
-    
-    if (index === 0) {
-        this._head = currentNode.next;
-
-        
-        if (!this._head) {
-            this._head.previous = null;
-       
-        } else {
-            this._tail = null;
-        }
-
-    
-    } else if (index === this.length) {
-        this._tail = this._tail.prev;
-        this._tail.next = null;
-    
-    } else {
-        while (count < index) {
-            currentNode = currentNode.next;
-            count++;
-        }
-
-        beforeNodeToDelete = currentNode.prev;
-        nodeToDelete = currentNode;
-        afterNodeToDelete = currentNode.next;
-
-        beforeNodeToDelete.next = afterNodeToDelete;
-        afterNodeToDelete.prevs = beforeNodeToDelete;
-        deletedNode = nodeToDelete;
-        nodeToDelete = null;
-    }
-
-    this.length--;
-
-//    return message.success;
-        }
+//        head() {
+//        return this.length == 0 ? null : this._head.data;
+//        }
+//
+//        tail() {
+////        return 
+//         return this.length == 0 ? null : this._tail.data;
+//        }
+//
+//        at(index) {
+//        var currentNode = this._head,
+//                length = this.length,
+//                count = 0,
+//                message = {failure: 'Failure: non-existent node in this list.'};
+//                
+//        if (length === 0 || index < 0 || index > length) {
+//        throw new Error(message.failure);
+//        }
+//
+//        
+//        while (count < index) {
+//        currentNode = currentNode.next;
+//        count++;
+//        }
+//
+//    return currentNode
+////        console.log(currentNode);
+//        }
+//
+//        insertAt(index, data) {}
+//
+//        isEmpty() {
+//        return this.length == 0 ? true : false;
+//        }
+//
+//        clear() {
+//        this.length = 0;
+//        this._head = null;
+//        this._tail = null;
+//        }
+//
+//        deleteAt(index) {
+//        var currentNode = this._head,
+//        length = this.length,
+//        count = 0,
+//        message = {failure: 'Failure: non-existent node in this list.'},
+//        beforeNodeToDelete = null,
+//        nodeToDelete = null,
+//        deletedNode = null,
+//        afterNodeToDelete = null;
+//
+//    
+//    if (length === 0 || index < 0 || index > length) {
+//        throw new Error(message.failure);
+//    }
+//
+//    
+//    if (index === 0) {
+//        this._head = currentNode.next;
+//
+//        
+//        if (!this._head) {
+//            this._head.previous = null;
+//       
+//        } else {
+//            this._tail = null;
+//        }
+//
+//    
+//    } else if (index === this.length) {
+//        this._tail = this._tail.prev;
+//        this._tail.next = null;
+//    
+//    } else {
+//        while (count < index) {
+//            currentNode = currentNode.next;
+//            count++;
+//        }
+//
+//        beforeNodeToDelete = currentNode.prev;
+//        nodeToDelete = currentNode;
+//        afterNodeToDelete = currentNode.next;
+//
+//        beforeNodeToDelete.next = afterNodeToDelete;
+//        afterNodeToDelete.prevs = beforeNodeToDelete;
+//        deletedNode = nodeToDelete;
+//        nodeToDelete = null;
+//    }
+//
+//    this.length--;
+//
+////    return message.success;
+//        }
 
         reverse() {}
 
