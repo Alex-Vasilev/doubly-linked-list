@@ -13,7 +13,7 @@ const Node = require('./node');
         }
 
         head() {
-//        return this._head.next.data;
+        return this._head.next.data;
         }
 
         tail() {
