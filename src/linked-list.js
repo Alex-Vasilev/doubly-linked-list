@@ -89,13 +89,13 @@ const Node = require('./node');
         }
 
         indexOf(data) {
-//        var index = 0,
-//            current = this._head.next;
-//        while (current != null && current.data != data){
-//            current = current.next;
-//            index++;
-//        }
-//        return current === null ? - 1 : index;
+        var index = 0,
+            current = this._head.next;
+        while (current != null && current.data != data){
+            current = current.next;
+            index++;
+        }
+        return current === null ? - 1 : index;
            }
         }
 
@@ -115,7 +115,7 @@ module.exports = LinkedList;
 //        list.deleteAt(0)
 //        list.at(0)
 
-
+list.reverse()
         list.isEmpty()
 
  list.clear()
