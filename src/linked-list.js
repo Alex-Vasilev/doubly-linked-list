@@ -62,18 +62,17 @@ const Node = require('./node');
                 length = this.length,
                 count = 0,
                 message = {failure: 'Failure: non-existent node in this list.'};
-                // 1-ый случай: неверная позиция 
-        if (length === 0 || index < 0 || index > length) {
+                if (length === 0 || index < 0 || index > length) {
         throw new Error(message.failure);
         }
 
-        // 2-ой случай: верная позиция 
+
         while (count < index) {
         currentNode = currentNode.next;
-        count++;
+                count++;
         }
 
-    return currentNode
+        return currentNode
 //        console.log(currentNode);
         }
 
@@ -85,61 +84,52 @@ const Node = require('./node');
 
         clear() {
         this.length = 0;
-        this._head = null;
-        this._tail = null;
+                this._head = null;
+                this._tail = null;
         }
 
         deleteAt(index) {
         var currentNode = this._head,
-        length = this.length,
-        count = 0,
-        message = {failure: 'Failure: non-existent node in this list.'},
-        beforeNodeToDelete = null,
-        nodeToDelete = null,
-        deletedNode = null,
-        afterNodeToDelete = null;
-
-    // 1-ый случай: неверная позиция
-    if (length === 0 || index < 0 || index > length) {
+                length = this.length,
+                count = 0,
+                message = {failure: 'Failure: non-existent node in this list.'},
+                beforeNodeToDelete = null,
+                nodeToDelete = null,
+                deletedNode = null,
+                afterNodeToDelete = null;
+                if (length === 0 || index < 0 || index > length) {
         throw new Error(message.failure);
-    }
-
-    // 2-ой случай: первый узел удален
-    if (index === 0) {
-        this._head = currentNode.next;
-
-        // 2-ой случай: существует второй узел
-        if (!this._head) {
-            this._head.previous = null;
-        // 2-ой случай: второго узла не существует
-        } else {
-            this._tail = null;
         }
 
-    // 3-ий случай: последний узел удален
-    } else if (index === this.length) {
+
+        if (index === 0) {
+        this._head = currentNode.next;
+                if (!this._head) {
+        this._head.previous = null;
+        } else {
+        this._tail = null;
+        }
+
+
+        } else if (index === this.length) {
         this._tail = this._tail.prev;
-        this._tail.next = null;
-    // 4-ый случай: средний узел удален
-    } else {
+                this._tail.next = null;
+        } else {
         while (count < index) {
-            currentNode = currentNode.next;
-            count++;
+        currentNode = currentNode.next;
+                count++;
         }
 
         beforeNodeToDelete = currentNode.prev;
-        nodeToDelete = currentNode;
-        afterNodeToDelete = currentNode.next;
+                nodeToDelete = currentNode;
+                afterNodeToDelete = currentNode.next;
+                beforeNodeToDelete.next = afterNodeToDelete;
+                afterNodeToDelete.prevs = beforeNodeToDelete;
+                deletedNode = nodeToDelete;
+                nodeToDelete = null;
+        }
 
-        beforeNodeToDelete.next = afterNodeToDelete;
-        afterNodeToDelete.prevs = beforeNodeToDelete;
-        deletedNode = nodeToDelete;
-        nodeToDelete = null;
-    }
-
-    this.length--;
-
-//    return message.success;
+        this.length--;
         }
 
         reverse() {}
@@ -150,8 +140,8 @@ const Node = require('./node');
 module.exports = LinkedList;
         const data = 42;
         const list = new LinkedList();
-            list.append(data);
-            list.append(123)
+        list.append(data);
+        list.append(123)
 //            list.append(413)
 
 //            list.head()
@@ -160,10 +150,10 @@ module.exports = LinkedList;
         list.head()
         list.tail()
         list.at(0)
-                list.at(0)
-                list.at(1);
-                list.deleteAt(1);
-                list.at(1)
+        list.at(0)
+        list.at(1);
+        list.deleteAt(1);
+        list.at(1)
 
 
 
