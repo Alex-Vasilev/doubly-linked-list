@@ -47,11 +47,22 @@ const Node = require('./node');
         }
 
         at(index) {
-//            this.length = index+1;
-            
-//            this.tail();
-//        console.log(this.length)
-//            return 
+        var currentNode = this._head,
+                length = this.length,
+                count = 0,
+                message = {failure: 'Failure: non-existent node in this list.'};
+                
+        if (length === 0 || index < 0 || index > length) {
+        throw new Error(message.failure);
+        }
+
+        
+        while (count < index) {
+        currentNode = currentNode.next;
+        count++;
+        }
+
+    return currentNode
         }
 
         insertAt(index, data) {}
