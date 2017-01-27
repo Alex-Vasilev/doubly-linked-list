@@ -18,8 +18,8 @@ const Node = require('./node');
         } else {
            node.prev = this._tail;
     node.next = this._head;
-    this.head.prev = node;
-    this.tail.next = node;
+    this._head.prev = node;
+    this._tail.next = node;
     this._tail = node;
         }
 
