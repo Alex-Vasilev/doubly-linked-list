@@ -62,7 +62,8 @@ const Node = require('./node');
         count++;
         }
 
-    return currentNode
+    return currentNode.data
+//    console.log(currentNode.data)
         }
 
         insertAt(index, data) {}
