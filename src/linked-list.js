@@ -10,30 +10,19 @@ const Node = require('./node');
         const node = new Node(data);
                 console.log(list._tail instanceof Node);
                 console.log(list._head instanceof Node);
-                if (this.length == 0) {
-//                 node.prev = node;
-//    node.next = this._tail;
+                if (this._head === null) {
+                 node.prev = node;
+    node.next = node;
         this._head = node;
                 this._tail = node;
-//        node.next = this._tail;
-//        this._head = node;
-//        this._tail = node;
-
         } else {
-        node.prev = this._tail;
-                this.tail.next = node;
-                this._tail = node;
+           node.prev = this._tail;
+    node.next = this._head;
+    this.head.prev = node;
+    this.tail.next = node;
+    this._tail = node;
         }
 
-//        if (this.length == 0) {
-//        this.head = Node;
-//        }
-//        else {
-//        this.head.next = Node;
-//        Node.prev = this.head;
-//        this.head = Node;
-//        }
-//        this.length++;
 //   if (this._head === null) {
 //     node.prev = node;
 //    node.next = node;
