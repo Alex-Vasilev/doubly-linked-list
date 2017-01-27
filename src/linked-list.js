@@ -20,20 +20,20 @@ const Node = require('./node');
 //        return this._tail.prev.data;
         }
 
-//        _at(index) {
-//        var currentNode = this._head.next,
-//        count = 0,
-//        length = this.length;
-//        if (isNaN(index) || index > length){
-//        throw new Error(message.failure);
-//         }
-//
-//        while (count != index && count <= length) {
-//            currentNode = currentNode.next;
-//            count++;
-//        }
-//        return currentNode;
-//        }
+        _at(index) {
+        var currentNode = this._head.next,
+        count = 0,
+        length = this.length;
+        if (isNaN(index) || index > length){
+        throw new Error(message.failure);
+         }
+
+        while (count != index && count <= length) {
+            currentNode = currentNode.next;
+            count++;
+        }
+        return currentNode;
+        }
 
         at(index){
 //        return this._at(index).data;
