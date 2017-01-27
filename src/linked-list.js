@@ -72,19 +72,20 @@ const Node = require('./node');
         }
 
         reverse() {
-//        var currentHead = this._head.next,
-//            currentTail = this._tail.prev,
-//            index = 0,
-//            temp;
-//        while (index != Math.floor(this.index / 2)){
-//            temp = currentHead.data;
-//            currentHead.data = currentTail.data;
-//            currentTail.data = temp;
-//            currentHead = currentHead.next;
-//            currentTail = currentTail.prev;
-//        }
-//
-//        return this;
+        var currentHead = this._head.next,
+            currentTail = this._tail.prev,
+            index = 0,
+            temp;
+        while (index != Math.floor(this.index / 2)){
+            temp = currentHead.data;
+            currentHead.data = currentTail.data;
+            currentTail.data = temp;
+            currentHead = currentHead.next;
+            currentTail = currentTail.prev;
+            index++;
+        }
+
+        return this;
         }
 
         indexOf(data) {
