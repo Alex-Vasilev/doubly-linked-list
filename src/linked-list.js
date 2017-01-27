@@ -21,7 +21,7 @@ const Node = require('./node');
 
         } else {
         node.prev = this._tail;
-                this.tail.next = node;
+                this._tail.next = node;
                 this._tail = node;
         }
 
@@ -151,9 +151,9 @@ const Node = require('./node');
 module.exports = LinkedList;
         const data = 42;
         const list = new LinkedList();
-            list.append(data);
-            list.append(123)
-            list.append(413)
+//            list.append(data);
+//            list.append(123)
+//            list.append(413)
 
 //            list.head()
 
@@ -162,9 +162,9 @@ module.exports = LinkedList;
 //        list.tail()
 //        list.at(0)
 //                list.at(0)
-                list.at(1);
-                list.deleteAt(1);
-                list.at(1)
+//                list.at(1);
+//                list.deleteAt(1);
+//                list.at(1)
 
 
 
@@ -172,4 +172,4 @@ module.exports = LinkedList;
 //        list.isEmpty()
 
 
-        console.log(list)
+//        console.log(list)
