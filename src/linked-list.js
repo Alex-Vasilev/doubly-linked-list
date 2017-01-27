@@ -50,11 +50,11 @@ const Node = require('./node');
         }
 
         head() {
-        return this.length == 0 ? null : this._head.data;
+//        return this.length == 0 ? null : this._head.data;
         }
 
         tail() {
-        return this.length == 0 ? null : this._tail.data;
+//        return this.length == 0 ? null : this._tail.data;
         }
 
         at(index) {
@@ -68,13 +68,13 @@ const Node = require('./node');
         insertAt(index, data) {}
 
         isEmpty() {
-        return this.length == 0 ? true : false;
+//        return this.length == 0 ? true : false;
         }
 
         clear() {
-        this.length = 0;
-        this._head = null;
-        this._tail = null;
+//        this.length = 0;
+//        this._head = null;
+//        this._tail = null;
         }
 
         deleteAt(index) {}
