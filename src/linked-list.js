@@ -95,7 +95,7 @@ const Node = require('./node');
 //            index++;
 //        }
 //        return current === null ? - 1 : index;
-//           }
+           }
         }
 
 module.exports = LinkedList;
