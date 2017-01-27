@@ -21,7 +21,7 @@ const Node = require('./node');
 
         } else {
         node.prev = this._tail;
-                this._tail.next = node;
+                this.tail.next = node;
                 this._tail = node;
         }
 
