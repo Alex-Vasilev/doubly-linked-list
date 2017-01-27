@@ -2,10 +2,10 @@ const Node = require('./node');
         class LinkedList {
         constructor() {
         this.length = 0;
-                this._head = new Node("HEAD", null, null);
-                this._tail = new Node("TAIL", null, null);
-                this._head.next = this._tail;
-                this._tail.prev = this._head;
+        this._head = new Node("HEAD", null, null);
+        this._tail = new Node("TAIL", null, null);
+        this._head.next = this._tail;
+        this._tail.prev = this._head;
         }
 
         append(data) {
@@ -13,87 +13,89 @@ const Node = require('./node');
         }
 
         head() {
-        return this._head.next.data;
-                }
+//        return this._head.next.data;
+        }
 
         tail() {
-        return this._tail.prev.data;
-                }
-
-        _at(index) {
-        var currentNode = this._head.next,
-                count = 0,
-                length = this.length;
-                if (isNaN(index) || index > length){
-        throw new Error(message.failure);
-                }
-
-        while (count != index && count <= length) {
-        currentNode = currentNode.next;
-                count++;
+//        return this._tail.prev.data;
         }
-        return currentNode;
-        }
+
+//        _at(index) {
+//        var currentNode = this._head.next,
+//        count = 0,
+//        length = this.length;
+//        if (isNaN(index) || index > length){
+//        throw new Error(message.failure);
+//         }
+//
+//        while (count != index && count <= length) {
+//            currentNode = currentNode.next;
+//            count++;
+//        }
+//        return currentNode;
+//        }
 
         at(index){
-        return this._at(index).data;
+//        return this._at(index).data;
         }
 
         insertAt(index, data) {
         var pos = this._at(index),
-                node = new Node(data, pos.prev, pos);
-                pos.prev = node;
-                node.prev.next = node;
-                this.length++;
-                return this;
-                }
+            node = new Node(data, pos.prev, pos);
+        pos.prev = node;
+        node.prev.next = node;
+        this.length++;
+        return this;
+        }
 
         isEmpty() {
-        return this.length == 0 ? true : false;
-                }
+//        return this.length == 0 ? true : false;
+        }
 
         clear() {
-        this.length = 0;
-//        this._head = null;
-//        this._tail = null;
+////           var index = this.length; 
+//          while(this.length>0){
+//              this.deleteAt(this.length)
+//              this.length--;
+//          }
         }
 
         deleteAt(index) {
-        var pos = this._at(index);
-                pos.next.prev = pos.prev;
-                pos.prev.next = pos.next;
-                this.length--;
-                pos.prev = null;
-                pos.next = null;
-                pos.data = null;
-                return this;
-                }
+//        var pos = this._at(index);
+//        pos.next.prev = pos.prev;
+//        pos.prev.next = pos.next;
+//        this.length--;
+//        pos.prev = null;
+//        pos.next = null;
+//        pos.data = null;
+//        return this;
+        }
 
         reverse() {
-        var currentHead = this._head.next,
-                currentTail = this._tail.prev,
-                index = 0,
-                temp;
-                while (index != Math.floor(this.index / 2)){
-        temp = currentHead.data;
-                currentHead.data = currentTail.data;
-                currentTail.data = temp;
-                currentHead = currentHead.next;
-                currentTail = currentTail.prev;
+//        var currentHead = this._head.next,
+//            currentTail = this._tail.prev,
+//            index = 0,
+//            temp;
+//        while (index != Math.floor(this.index / 2)){
+//            temp = currentHead.data;
+//            currentHead.data = currentTail.data;
+//            currentTail.data = temp;
+//            currentHead = currentHead.next;
+//            currentTail = currentTail.prev;
+//        }
+//
+//        return this;
         }
-
-        return this;
-                }
 
         indexOf(data) {
-        var index = 0,
-                current = this._head.next;
-                while (current != null && current.data != data){
-        current = current.next;
-                index++;
-        }
-        return current === null ? - 1 : index;
-                }
+//        var index = 0,
+//            current = this._head.next;
+//        while (current != null && current.data != data){
+//            current = current.next;
+//            index++;
+//        }
+//        return current === null ? - 1 : index;
+//           }
         }
 
 module.exports = LinkedList;
@@ -115,5 +117,5 @@ module.exports = LinkedList;
 
         list.isEmpty()
 
-
+ list.clear()
         console.log(list)
