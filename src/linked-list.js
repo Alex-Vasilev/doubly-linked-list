@@ -20,8 +20,9 @@ const Node = require('./node');
 //        this._tail = node;
 
         } else {
-        node.prev = this._tail;
+        
                 this._tail.next = node;
+                node.prev = this._tail;
                 this._tail = node;
         }
 
@@ -90,58 +91,58 @@ const Node = require('./node');
         this._tail = null;
         }
 
-//        deleteAt(index) {
-//        var currentNode = this._head,
-//        length = this.length,
-//        count = 0,
-//        message = {failure: 'Failure: non-existent node in this list.'},
-//        beforeNodeToDelete = null,
-//        nodeToDelete = null,
-//        deletedNode = null,
-//        afterNodeToDelete = null;
-//
-//    
-//    if (length === 0 || index < 0 || index > length) {
-//        throw new Error(message.failure);
-//    }
-//
-//    
-//    if (index === 0) {
-//        this._head = currentNode.next;
-//
-//        
-//        if (!this._head) {
-//            this._head.previous = null;
-//       
-//        } else {
-//            this._tail = null;
-//        }
-//
-//    
-//    } else if (index === this.length) {
-//        this._tail = this._tail.prev;
-//        this._tail.next = null;
-//    
-//    } else {
-//        while (count < index) {
-//            currentNode = currentNode.next;
-//            count++;
-//        }
-//
-//        beforeNodeToDelete = currentNode.prev;
-//        nodeToDelete = currentNode;
-//        afterNodeToDelete = currentNode.next;
-//
-//        beforeNodeToDelete.next = afterNodeToDelete;
-//        afterNodeToDelete.prevs = beforeNodeToDelete;
-//        deletedNode = nodeToDelete;
-//        nodeToDelete = null;
-//    }
-//
-//    this.length--;
-//
-////    return message.success;
-//        }
+        deleteAt(index) {
+        var currentNode = this._head,
+        length = this.length,
+        count = 0,
+        message = {failure: 'Failure: non-existent node in this list.'},
+        beforeNodeToDelete = null,
+        nodeToDelete = null,
+        deletedNode = null,
+        afterNodeToDelete = null;
+
+    
+    if (length === 0 || index < 0 || index > length) {
+        throw new Error(message.failure);
+    }
+
+    
+    if (index === 0) {
+        this._head = currentNode.next;
+
+        
+        if (!this._head) {
+            this._head.previous = null;
+       
+        } else {
+            this._tail = null;
+        }
+
+    
+    } else if (index === this.length) {
+        this._tail = this._tail.prev;
+        this._tail.next = null;
+    
+    } else {
+        while (count < index) {
+            currentNode = currentNode.next;
+            count++;
+        }
+
+        beforeNodeToDelete = currentNode.prev;
+        nodeToDelete = currentNode;
+        afterNodeToDelete = currentNode.next;
+
+        beforeNodeToDelete.next = afterNodeToDelete;
+        afterNodeToDelete.prevs = beforeNodeToDelete;
+        deletedNode = nodeToDelete;
+        nodeToDelete = null;
+    }
+
+    this.length--;
+
+//    return message.success;
+        }
 
         reverse() {}
 
@@ -158,13 +159,13 @@ module.exports = LinkedList;
 //            list.head()
 
 //                        list.append(567)
-        list.head()
-        list.tail()
-        list.at(0)
-                list.at(0)
-                list.at(1);
-                list.deleteAt(1);
-                list.at(1)
+//        list.head()
+//        list.tail()
+//        list.at(0)
+//                list.at(0)
+//                list.at(1);
+//                list.deleteAt(1);
+//                list.at(1)
 
 
 
