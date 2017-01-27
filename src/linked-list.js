@@ -76,7 +76,7 @@ const Node = require('./node');
             currentTail = this._tail.prev,
             index = 0,
             temp;
-        while (index != Math.floor(this.index / 2)){
+        while (index < Math.floor(this.length / 2)){
             temp = currentHead.data;
             currentHead.data = currentTail.data;
             currentTail.data = temp;
@@ -111,9 +111,9 @@ module.exports = LinkedList;
 //                        list.append(567)
 //        list.head()
 //        list.tail()
-        list.at(0)
-        list.deleteAt(0)
-        list.at(0)
+//        list.at(0)
+//        list.deleteAt(0)
+//        list.at(0)
 
 
         list.isEmpty()
