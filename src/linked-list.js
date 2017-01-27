@@ -54,8 +54,7 @@ const Node = require('./node');
         }
 
         tail() {
-//        return 
-        console.log(this.length == 0 ? null : this._tail.data);
+        return this.length == 0 ? null : this._tail.data;
         }
 
         at(index) {
@@ -74,8 +73,8 @@ const Node = require('./node');
         count++;
         }
 
-//    return currentNode
-        console.log(currentNode);
+    return currentNode
+//        console.log(currentNode);
         }
 
         insertAt(index, data) {}
@@ -151,20 +150,20 @@ const Node = require('./node');
 module.exports = LinkedList;
         const data = 42;
         const list = new LinkedList();
-//            list.append(data);
-//            list.append(123)
+            list.append(data);
+            list.append(123)
 //            list.append(413)
 
 //            list.head()
 
 //                        list.append(567)
-//        list.head()
-//        list.tail()
-//        list.at(0)
-//                list.at(0)
-//                list.at(1);
-//                list.deleteAt(1);
-//                list.at(1)
+        list.head()
+        list.tail()
+        list.at(0)
+                list.at(0)
+                list.at(1);
+                list.deleteAt(1);
+                list.at(1)
 
 
 
@@ -172,4 +171,4 @@ module.exports = LinkedList;
 //        list.isEmpty()
 
 
-//        console.log(list)
+        console.log(list)
