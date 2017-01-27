@@ -36,7 +36,7 @@ const Node = require('./node');
         }
 
         at(index){
-//        return this._at(index).data;
+        return this._at(index).data;
         }
 
         insertAt(index, data) {
