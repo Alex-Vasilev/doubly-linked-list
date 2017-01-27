@@ -2,31 +2,29 @@ const Node = require('./node');
         class LinkedList {
         constructor() {
         this.length = 0;
-        this._head = null;
-        this._tail = null;
+                this._head = null;
+                this._tail = null;
         }
 
         append(data) {
         const node = new Node(data);
-        
-         console.log(list._tail instanceof Node);
-         console.log(list._head instanceof Node);
-      
-        if (this.length == 0) {
+                console.log(list._tail instanceof Node);
+                console.log(list._head instanceof Node);
+                if (this.length == 0) {
 //                 node.prev = node;
 //    node.next = this._tail;
-    this._head = node;
-    this._tail = node;
+        this._head = node;
+                this._tail = node;
 //        node.next = this._tail;
 //        this._head = node;
 //        this._tail = node;
-        
+
         } else {
         node.prev = this._tail;
-        this.tail.next = node;
-        this._tail = node;
+                this.tail.next = node;
+                this._tail = node;
         }
-            
+
 //        if (this.length == 0) {
 //        this.head = Node;
 //        }
@@ -48,26 +46,33 @@ const Node = require('./node');
 //    this.tail.next = node;
 //    this._tail = node;
 //  }
-  this.length++;
-
- 
+        this.length++;
         }
 
         head() {
-            return this._head.data
+        return this.length == 0 ? null : this._head.data;
         }
 
         tail() {
-            return this._tail.data
+        return this.length == 0 ? null : this._tail.data;
         }
 
-        at(index) {}
+        at(index) {
+        console.log(this.length)
+//            return 
+        }
 
         insertAt(index, data) {}
 
-        isEmpty() {}
+        isEmpty() {
+        return this.length == 0 ? true : false;
+        }
 
-        clear() {}
+        clear() {
+        this.length = 0;
+                this._head = null;
+                this._tail = null;
+        }
 
         deleteAt(index) {}
 
@@ -77,21 +82,21 @@ const Node = require('./node');
         }
 
 module.exports = LinkedList;
-            const data = 42;
+        const data = 42;
+        const list = new LinkedList();
+//            list.append(data);
+//            list.append(123)
+//            list.append(413)
 
-            const list = new LinkedList();
-
-            list.append(data);
-            list.append(123)
-            list.append(413)
-            
 //            list.head()
-            
-                        list.append(567)
-                                    list.head()
-                                                                        list.tail()
+
+//                        list.append(567)
+        list.head()
+        list.tail()
+        list.at(0)
 
 
-                        
+        list.isEmpty()
 
-            console.log(list)
+
+        console.log(list)
