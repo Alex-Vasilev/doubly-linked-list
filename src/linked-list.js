@@ -49,7 +49,7 @@ const Node = require('./node');
         }
 
         isEmpty() {
-//        return this.length == 0 ? true : false;
+        return this.length == 0 ? true : false;
         }
 
         clear() {
