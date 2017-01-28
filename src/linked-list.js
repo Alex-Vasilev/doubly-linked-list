@@ -55,25 +55,17 @@ const Node = require('./node');
         }
 
         clear() {
-            var index = 0, current;
-            while(index){
-                deleteAt(index);
-                index++
-            }
-//         this._head = new Node("HEAD", null, null);
-//        this._tail = new Node("TAIL", null, null);
-//        this._head.next = this._tail;
-//        this._tail.prev = this._head;
-            this._head = null;
-            this._tail = null;
-            this.length=0;
-            return this;
-//            console.log(this);
-////           var index = this.length; 
-//          while(this.length>0){
-//              this.deleteAt(this.length)
-//              this.length--;
-//          }
+        var index = 0;
+        while (index){
+            deleteAt(index);
+            index++
+        }
+        this._head = new Node("HEAD", null, null);
+        this._tail = new Node("TAIL", null, null);
+        this._head.next = this._tail;
+        this._tail.prev = this._head;
+        this.length = 0;
+        return this;
         }
 
         deleteAt(index) {
