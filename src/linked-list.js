@@ -57,13 +57,17 @@ const Node = require('./node');
         clear() {
             var index = 0, current;
             while(this.length){
-                current = this._at(index);
+                current = this.deleteAt(index);
 //                current = null;
 //                index++;
                 this.length--;
-                current = null
+//                current = null
             }
-//            return this;
+//         this._head = new Node("HEAD", null, null);
+//        this._tail = new Node("TAIL", null, null);
+//        this._head.next = this._tail;
+//        this._tail.prev = this._head;
+            return this;
 //            console.log(this);
 ////           var index = this.length; 
 //          while(this.length>0){
