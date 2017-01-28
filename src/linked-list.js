@@ -11,7 +11,8 @@ const Node = require('./node');
         }
 
         append(data) {
-        return  this.insertAt(this.length, data);
+        this.insertAt(this.length, data);
+        return this;
         }
 
         head() {
@@ -103,7 +104,8 @@ const Node = require('./node');
             index++;
         }
         return current === null ? - 1 : index;
-           }
+        }
+             
         }
 
 module.exports = LinkedList;
@@ -122,8 +124,8 @@ module.exports = LinkedList;
 //        list.deleteAt(0)
 //        list.at(0)
 
-        list.reverse()
+//        list.reverse()
         list.isEmpty()
 
-        list.clear()
+//        list.clear()
         console.log(list)
