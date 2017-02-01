@@ -1,127 +1,119 @@
 const Node = require('./node');
-        class LinkedList {
-        constructor() {
+class LinkedList {
+    constructor() {
         this.length = 0;
-        this._head = null;
+        this._head  = null;
         this._tail = null;
-        }
+    }
 
-        append(data) {
-              if (this.length == 0)  { 
-        this._head = new Node("HEAD", null, null);
-        this._tail = new Node("TAIL", null, null);
-        this._head.next = this._tail;
-        this._tail.prev = this._head;}
-        return this.insertAt(this.length, data);
+    append(data) {
+        if(this.length == 0){
+            this._head  = new Node('head', null, null);
+            this._tail  = new Node('tail', null, null);
+            this._head.next = this._tail;
+            this._tail.prev = this._head;
         }
+        this.insertAt(this.length, data);         
+        this.length++;
+        return this;
+    }
 
-        head() {
+    head() {
         return this._head.next.data;
-        }
 
-        tail() {
+    }
+
+    tail() {
         return this._tail.prev.data;
-        }
+    }
 
-        _at(index) {
+    _at(index){
         var currentNode = this._head.next,
         count = 0,
-        length = this.length;
-        if (isNaN(index) || index > length){
-        throw new Error(message.failure);
-         }
-
-        while (count != index && count <= length) {
+        length = this.length;       
+        if(isNaN(index)|| length<index){
+            throw Error('lox');
+        }
+        while(count!=index && count <= length){
             currentNode = currentNode.next;
             count++;
         }
         return currentNode;
-        }
+    }
 
-        at(index){
-        return this._at(index).data;
-        }
+    at(index){
+        return this._at(index).data
+    }
 
-        insertAt(index, data) {
-        var pos = this._at(index),
-            node = new Node(data, pos.prev, pos);
-        pos.prev = node;
-        node.prev.next = node;
-        this.length++;
+    insertAt(index, data) {
+        var currentNode = this._at(index),
+        node = new Node(data, currentNode.prev, currentNode);
+        if(this.length==0){
+            this._head.next = node;
+            this._tail.prev = node;
+        }
+        else{
+            currentNode.prev = node;
+            node.prev.next = node;              
+        }
         return this;
-        }
+    }
 
-        isEmpty() {
+    isEmpty() {
         return this.length == 0 ? true : false;
-        }
+    }
 
-        clear() {
-        this._head = new Node(null, null, null);
-        this._tail = new Node(null, null, null);
+    clear() {
+        this._head  = new Node(null);
+        this._tail  = new Node(null);
         this._head.next = this._tail;
         this._tail.prev = this._head;
         this.length = 0;
         return this;
-        }
+    }
 
-        deleteAt(index) {
-        var pos = this._at(index);
-        pos.next.prev = pos.prev;
-        pos.prev.next = pos.next;
+    deleteAt(index) {
+        var currentNode = this._at(index);
+
+        currentNode.prev.next = currentNode.next;
+        currentNode.next.prev = currentNode.prev;
+        currentNode = null;
         this.length--;
-        pos.prev = null;
-        pos.next = null;
-        pos.data = null;
         return this;
-        }
+    }
 
-        reverse() {
-        var currentHead = this._head.next,
-            currentTail = this._tail.prev,
-            index = 0,
-            temp;
-        while (index < Math.floor(this.length / 2)){
-            temp = currentHead.data;
-            currentHead.data = currentTail.data;
-            currentTail.data = temp;
-            currentHead = currentHead.next;
-            currentTail = currentTail.prev;
-            index++;
-        }
-        return this;
-        }
+    reverse() {
+                // var currentNode = this._head,
+        // count = 0,
+        // index = this.length
 
-        indexOf(data) {
-        var index = 0,
-            current = this._head.next;
-        while (current != null && current.data != data){
-            current = current.next;
-            index++;
+        // if(count <= index){
+        //     while(count < index){
+        //         // currentNode = currentNode.next;
+        //         console.log(currentNode) 
+        //         currentNode = currentNode.next;
+        //         count++;
+        //     }
+        // } else throw Error('lox')
+    }
+
+    indexOf(data) {
+        var currentNode = this._head.next,
+        count = 0;
+        while(count < this.length){
+            if(currentNode.data === data) return count;                 
+            currentNode = currentNode.next;
+            count++;            
         }
-        return current === null ? - 1 : index;
-        }
-             
-        }
+        return -1;   
+    }
+}
 
 module.exports = LinkedList;
-        const data = 42;
-        const list = new LinkedList();
-//        list.append(data);
-//        list.append(123)
-        list.append(413)
+const data = 42;
+const list = new LinkedList();
+list.append(data);
+list.append(123)
 
-//            list.head()
-
-//                        list.append(567)
-//        list.head()
-//        list.tail()
-//        list.at(0)
-//        list.deleteAt(0)
-//        list.at(0)
-
-//        list.reverse()
-        list.isEmpty()
-//
-//        list.clear()
-//        list.append(413)
-        console.log(list)
+list._at(1)
+console.log(list)
