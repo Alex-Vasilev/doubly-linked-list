@@ -83,18 +83,19 @@ class LinkedList {
     }
 
     reverse() {
-                // var currentNode = this._head,
-        // count = 0,
-        // index = this.length
-
-        // if(count <= index){
-        //     while(count < index){
-        //         // currentNode = currentNode.next;
-        //         console.log(currentNode) 
-        //         currentNode = currentNode.next;
-        //         count++;
-        //     }
-        // } else throw Error('lox')
+        var currentHead = this._head.next,
+            currentTail = this._tail.prev,
+        index = 0,
+        temp;
+        while(index < Math.floor(this.length/2)){
+            temp = currentHead.data;
+            currentHead.data = currentTail.data;
+            currentTail.data = temp;
+            currentHead = currentHead.next;
+            currentTail = currentTail.prev;
+            index++;
+        }
+        return this;
     }
 
     indexOf(data) {
@@ -113,7 +114,7 @@ module.exports = LinkedList;
 const data = 42;
 const list = new LinkedList();
 list.append(data);
-list.append(123)
+// list.append(123)
 
 list._at(1)
 console.log(list)
